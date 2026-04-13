@@ -444,12 +444,14 @@ async function startRoute() {
     }
   } catch(e) {
     hideSpinner();
-    setStatus('Errore nel calcolo. Controlla la connessione e riprova.', 'err');
+    
     console.error(e);
   }
 
   document.getElementById('go-btn').disabled = false;
 }
+setStatus(e.message, 'err'); // 🔥 QUESTO È LA CHIAVE
+  console.error(e);
 
 // ═══════════════════════════════════════════════
 //  OPENROUTESERVICE
